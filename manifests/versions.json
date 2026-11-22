@@ -1,0 +1,28 @@
+{
+  "format": 1,
+  "pack_version": "0.1.0",
+  "verified": {
+    "0.0.204": {
+      "pristine_sha256_16": "af684513edb0c024",
+      "patched_sha256_16": "86f8885c1ecf768a",
+      "note": "pristine/patched 均为本包 0.1.0 词典内容下的实测值；patched 值随词典变化，仅作状态参考不作断言"
+    }
+  },
+  "range": {
+    "min": "0.0.196",
+    "max": "0.0.204",
+    "policy": "warn"
+  },
+  "hard_refuse": [
+    "fuse_asar_integrity_on",
+    "architecture_orchestrator_missing"
+  ],
+  "remote_dict_last_verified": "2026-11-22",
+  "community_snapshot": {
+    "source": "Kfowever/freebuff-zh-patch",
+    "repo_release": "v0.11.10",
+    "lib_self_version": "0.10.8",
+    "fetched": "2026-11-20 (repo main)",
+    "note": "上游安装器版本号与库文件内 PATCH_VERSION 不同步（其内部双轨），以抓取日期为准"
+  }
+}
