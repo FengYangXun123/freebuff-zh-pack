@@ -2,13 +2,13 @@
 
 非官方的 Freebuff Desktop 中文界面补丁。运行时注入，不改服务端数据、不访问网络（唯一例外：可选的「检查更新」，可 `--no-net` 关闭）、可完整还原。
 
-> 当前适配：**Freebuff Desktop 0.0.204**（Windows x64）· 兼容矩阵见 `manifests/compat-matrix.md` · 无自动推送，请 Star 收 Release 通知
+> 当前适配：**Freebuff Desktop 0.0.205**（Windows x64）· 兼容矩阵见 `manifests/compat-matrix.md` · 无自动推送，请 Star 收 Release 通知
 
 ## 它做什么
 
 Freebuff Desktop 的主界面来自远端 freebuff.com 网页，官方目前没有任何中文通道（`og:locale` 仍为 `en_US`）。本包在本地壳的 `app.asar` 内注入一个运行时翻译层，把界面文案实时替换为中文——
 
-- **5,700+ 条词典**：自建 3,800+ 条（主界面 / 设置 / 用量 / 模板分类全覆盖），并接入社区项目 [Kfowever/freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch) 的 3,100+ 条词库与 200+ 条正则规则（MIT，许可随附 `licenses/`）
+- **5,832 条词典**：自建 3,946 条（`zh-main` 1184 + `zh-remote` 2762，主界面 / 设置 / 用量 / 模板分类全覆盖），并接入社区项目 [Kfowever/freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch) 的 3,164 条词库与 200+ 条正则规则（MIT，许可随附 `licenses/`）；三库合并去重后 5,832 条
 - **双层注入共用同一词典**：本包译文优先、社区层兜底，两层同源，避免 React 重绘时互相覆盖
 - **聊天内容零接触**：只处理界面属性与文案节点，用户输入、对话正文、代码块物理隔离
 
@@ -46,7 +46,8 @@ python install.py --install --force  # 跳过版本警告（熔线/架构硬拦�
 
 | Freebuff Desktop 版本 | 本包状态 | 备注 |
 |---|---|---|
-| **0.0.204** | ✅ 已验证 | 真机全链两轮（装→验→还原→复装），pristine sha `af684513…` / 补丁态 `86f8885c…` |
+| **0.0.205** | ✅ 已验证 | 干净安装往返实测（官方卸载 → pristine 重装 → 装包 → 中文验收 → 还原英文 → 复装中文），pristine sha `aa6d9287…` / 补丁态 `4caaf5cb…` |
+| 0.0.204 | ✅ 已验证（v0.1.0） | 真机全链两轮，pristine sha `af684513…` / 补丁态 `86f8885c…`（旧包词典口径） |
 | 0.0.196 – 0.0.203 | ⚠️ 未验证 | 词典含该区间远端词条，理论上可用，未逐版实测 |
 | 更新版本 | ⚠️ 警告可装 | 安装器检测到未适配的新版本会提示；最坏情况是界面出现英文残留，不会损坏应用 |
 

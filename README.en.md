@@ -2,13 +2,13 @@
 
 Unofficial Simplified Chinese patch for Freebuff Desktop. Runtime injection into the local shell — no server-side changes, no network access, fully reversible.
 
-> Current target: **Freebuff Desktop 0.0.204** (Windows x64) · see `manifests/compat-matrix.md` · English below is a summary; the Chinese README is authoritative.
+> Current target: **Freebuff Desktop 0.0.205** (Windows x64) · see `manifests/compat-matrix.md` · English below is a summary; the Chinese README is authoritative.
 
 ## What it does
 
 Since 0.0.201 the Freebuff Desktop UI comes from the freebuff.com web app; the vendor ships no Chinese locale. This pack injects a runtime translation layer into the local shell's `app.asar`:
 
-- **5,700+ dictionary entries**: 3,800+ maintained here, plus the vocabulary of [Kfowever/freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch) (MIT, credited in `licenses/`) injected as a second layer
+- **5,832 dictionary entries**: 3,946 maintained here (`zh-main` 1184 + `zh-remote` 2762), plus the vocabulary of [Kfowever/freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch) (3,164 entries, MIT, credited in `licenses/`) injected as a second layer; 5,832 after deduplication
 - **Two layers share one merged dictionary** — our wording wins, the community layer fills gaps; React re-render races cannot diverge wording
 - **Chat content untouched**: only UI attributes and text nodes are processed; user input, conversations and code blocks are physically excluded
 
@@ -31,7 +31,8 @@ Since 0.0.201 the Freebuff Desktop UI comes from the freebuff.com web app; the v
 
 ## Compatibility
 
-- **0.0.204**: verified end-to-end on real hardware (install → verify → restore → reinstall, byte-identical artifacts)
+- **0.0.205**: verified clean-install round trip on real hardware (uninstall original → pristine reinstall → apply pack → Chinese UI check → restore to English → reapply; pristine sha `aa6d9287…` / patched `4caaf5cb…`)
+- 0.0.204: verified with v0.1.0 (earlier dictionary snapshot)
 - 0.0.196–0.0.203: untested, expected to work (dictionary covers that range)
 - Newer versions: installer warns but proceeds — worst case is untranslated residue, never a broken app
 - Hard refusals (no override): asar integrity fuse ON, or unexpected app architecture
