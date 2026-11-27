@@ -8,7 +8,7 @@
   T4  版本策略      —— 区间外 warn / 已验证 ok / 缺版本 warn
   T5  还原          —— 字节级恢复 + 基线清理 + 哈希相等
   T6  幂等          —— 二次 apply 产物与首次逐字节一致
-  T7  词典完整性    —— 三层合并 = 5832 条；社区词表可读
+  T7  词典完整性    —— 三层合并 = 6386 条；社区词表可读
   T8  无硬编码路径  —— pack 内 py/cmd/md/js 无本机用户目录绝对路径
   T9  .cmd 卫生     —— 纯 ASCII + 全文零括号
   T10 tasklist 解析  —— 运行中判定（喂罐头输出，不真查进程）
@@ -123,7 +123,9 @@ def t4(tmp):
     a2, n2 = engine.version_policy("0.0.205")
     assert a2 == "ok", "0.0.205 已纳入 v0.1.1 verified，应 ok"
     a2b, n2b = engine.version_policy("0.0.206")
-    assert a2b == "warn", "高于上限应 warn"
+    assert a2b == "ok", "0.0.206 已纳入 v0.1.2 verified，应 ok"
+    a2c, n2c = engine.version_policy("0.0.207")
+    assert a2c == "warn", "高于上限应 warn"
     a3, _ = engine.version_policy("0.0.190")
     assert a3 == "warn"
     a4, _ = engine.version_policy(None)
@@ -164,7 +166,7 @@ def t6(tmp):
 def t7(tmp):
     d = engine.load_dict()
     c = engine.load_community_dict()
-    assert len(d) == 5832, "合并词典应 5832 条，实际 %d" % len(d)
+    assert len(d) == 6386, "合并词典应 6386 条，实际 %d" % len(d)
     assert len(c) >= 3000, "社区词表异常：%d" % len(c)
     assert d.get("New chat") == "新建对话", "关键词抽查失败：%r" % d.get("New chat")
     return "OK（%d/%d）" % (len(d), len(c))

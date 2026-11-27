@@ -1,11 +1,16 @@
 {
   "format": 1,
-  "pack_version": "0.1.1",
+  "pack_version": "0.1.2",
   "verified": {
+    "0.0.206": {
+      "pristine_sha256_16": "b768b8c718179c6e",
+      "patched_sha256_16": "563c9a0e905e2bfc",
+      "note": "pristine 取自官方 0.0.206 安装包（SHA-512 与 latest.yml 逐字一致）；patched 为本包 0.1.2 词典在沙箱干净 asar 上的实测值，随词典变化仅作状态参考不作断言"
+    },
     "0.0.205": {
       "pristine_sha256_16": "aa6d928700bef021",
       "patched_sha256_16": "4caaf5cbecf68a1e",
-      "note": "pristine/patched 均为本包 0.1.1 词典内容下的干净安装往返实测值；patched 值随词典变化，仅作状态参考不作断言"
+      "note": "pristine/patched 均为 v0.1.1 词典内容下的干净安装往返实测值；patched 值随词典变化，仅作状态参考不作断言"
     },
     "0.0.204": {
       "pristine_sha256_16": "af684513edb0c024",
@@ -15,19 +20,19 @@
   },
   "range": {
     "min": "0.0.196",
-    "max": "0.0.205",
+    "max": "0.0.206",
     "policy": "warn"
   },
   "hard_refuse": [
     "fuse_asar_integrity_on",
     "architecture_orchestrator_missing"
   ],
-  "remote_dict_last_verified": "2026-11-25",
+  "remote_dict_last_verified": "2026-11-27",
   "community_snapshot": {
     "source": "Kfowever/freebuff-zh-patch",
-    "repo_release": "v0.11.10",
-    "lib_self_version": "0.10.8",
-    "fetched": "2026-11-20 (repo main)",
-    "note": "上游安装器版本号与库文件内 PATCH_VERSION 不同步（其内部双轨），以抓取日期为准；上游 v0.11.11（2026-11-24）已适配 0.0.205，本包 vendored 仍为 v0.11.10 快照——本轮只把确认命中的新文案按我方措辞入库，未整表替换"
+    "repo_release": "v0.11.12",
+    "lib_self_version": "0.10.10",
+    "fetched": "2026-11-27（release 资产，SHA-256 与清单双源复核）",
+    "note": "上游安装器版本号与库文件内 PATCH_VERSION 不同步（其内部双轨）；本轮整表同步 exact 3947 条，重叠 1517 条沿用我方措辞，净增 558 条 → 合并词典 6386"
   }
 }

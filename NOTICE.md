@@ -9,8 +9,8 @@
 ## 致谢与第三方组件
 
 - **[Kfowever/freebuff-zh-patch](https://github.com/Kfowever/freebuff-zh-patch)**（MIT）——本包第二层词库与正则规则来源：
-  - `lib/zh-community-lib.js`：其 `library/freebuff-zh-cn.js` 快照（2026-11-20 抓取其仓库 main，对应上游 0.0.204；库文件自声明 PATCH_VERSION 0.10.8，上游安装器发布版本 v0.11.10——两者为其内部版本轨差异），按 MIT 原样分发，许可证原文随附 `licenses/Kfowever-freebuff-zh-patch-LICENSE.txt`
-  - `dicts/zh-community.json`：自上述库词条抽取（3,164 条）
-  - 本包词典与其存在措辞分歧，以本包自建译文为准（661 条分歧对照留档于维护仓，未随包分发）
+  - `lib/zh-community-lib.js`：其 `library/freebuff-zh-cn.js` 快照（2026-11-27 抓取 release v0.11.12，对应上游 0.0.196–0.0.206；库文件自声明 PATCH_VERSION 0.10.10，上游安装器发布版本 v0.11.12——两者为其内部版本轨差异），按 MIT 原样分发，许可证原文随附 `licenses/Kfowever-freebuff-zh-patch-LICENSE.txt`
+  - `dicts/zh-community.json`：自上述库词条抽取（3,978 条；重叠词条沿用本包译文）
+  - 本包词典与其存在措辞分歧，以本包自建译文为准（分歧对照留档于维护仓，未随包分发）
 - **模式参考（非代码引用）**：[javaht/claude-desktop-zh-cn](https://github.com/javaht/claude-desktop-zh-cn)、[antigravity-cn-community/Antigravity-Chinese-Localization](https://github.com/antigravity-cn-community/Antigravity-Chinese-Localization)
 - 本项目自身代码与词典以 MIT 发布（见 `LICENSE`）
